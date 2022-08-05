@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Validation Page</title>
+	<link rel="stylesheet" href="valid.css">
+</head>
+<body>
+		<script type="text/javascript">
+			function myFun(){
+				var a= document.getElementById('email').value;
+				var pass= document.getElementById('password').value;
+				var mob= document.getElementById('Mobno').value;
+
+				if (a==""){
+					document.getElementById('em').innerHTML="**Please fill the email id";
+					return false;
+				}
+
+				if(a.indexOf('@')<=0){
+					document.getElementById('em').innerHTML="**Invalid Email**";
+					return false;
+
+				}
+				if(a.charAt(a.length-4)!='.'){
+					document.getElementById('em').innerHTML="**Invalid Email**";
+					return false;
+
+				}
+				if (pass==""){
+					document.getElementById('pas').innerHTML="**Please fill the password";
+					return false;
+				}
+				if((pass.length <= 8|| pass.length >=12)){
+					document.getElementById('pas').innerHTML="**minimum 8 characters and maximum 12 characters**";
+					return false;
+				}
+				if((mob.length < 10)){
+					document.getElementById('Mob').innerHTML="**Mobile no needs to be 10 digits**";
+					return false;
+
+				}
+			}
+
+		</script>
+	<h1>Html Form</h1>
+
+	<form name="myForm" onsubmit="return myFun()">
+		<fieldset>
+			<legend>Login</legend>
+			<div>
+			<label for="Email">Email:</label>
+			<input type="text" id="email" value="">
+			 <span id="em"></span>
+			</div>
+            
+            <div>
+			<label for="Password">Password:</label>
+			<input type="Password" id="password" value="">
+			 <span id="pas"></span>
+			</div>
+            
+            <div>
+			<label for="Mobileno">Mobile no.:</label>
+			<input type="Numbers" id="Mobno" value="">
+			 <span id="Mob"></span>
+			</div>
+			<button type="submit" value="Submit">SUBMIT</button>
+		</fieldset>
+	</form>
+</body>
+</html>

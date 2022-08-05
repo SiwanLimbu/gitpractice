@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage validation</title>
+</head>
+<body>
+    <script>
+        function myWeb(){
+            var name = document.myForm.username.value;
+            var age = document.myForm.userage.value;
+            var pass = document.myForm.password.value;
+            var a = document.myForm.email.value;
+
+            if(name == ""){
+                document.getElementById("usename").innerHTML = "** Please enter username";
+                return false;
+            }
+
+            if(name.length <= 2 || name.length >= 20 ){
+                document.getElementById("usename").innerHTML = "** Invalid username";
+                return false;
+            }
+
+            if(age == ""){
+                document.getElementById("useage").innerHTML = "** Please enter age";
+                return false;
+            }
+
+            if(pass == ""){
+                document.getElementById("usepass").innerHTML= "**Please enter password";
+                return false;
+            }
+
+            if(pass.length<=2 || pass.length >= 20){
+                document.getElementById("usepass").innerHTML = "**Invalid password length";
+                return false;
+            }
+
+            if(a == ""){
+                document.getElementById("useemail").innerHTML = "**Please enter email";
+                return false;
+            }
+
+            if(a.indexOf('@')<= 0){
+                document.getElementById("useemail").innerHTML = "**Invalid email";
+                return false;
+            }
+
+            if(a.charAt(a.length - 4)!= '.'){
+                document.getElementById("useemail").innerHTML = "**Invalid email";
+                return false;
+            }
+        }
+    </script>
+
+    <form name="myForm" onsubmit="return myWeb()">
+        <div>
+        Username : <input type="text" name="username" value="">
+            <span id="usename"></span>
+        </div>
+         <br>
+
+        <div>
+            Age : <input type="numbers" name="userage" value="">
+            <span id="useage"></span>
+        </div>
+
+        <br>
+
+        <div>
+            Password: <input type="password" name="password">
+            <span id="usepass"></span>
+        </div>
+        <br>
+
+        <div>
+            Email: <input type="text" name="email">
+            <span id="useemail"></span>
+        </div>
+        <br>
+
+    <input type="submit" value="submit">
+    </form>
+</body>
+</html>

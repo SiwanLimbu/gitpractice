@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title>Login Form</title>
+</head>
+
+<body>
+	<script type="text/JavaScript">
+
+		function myfun(){
+		 var username= document.getElementById('name').value;
+		 var userage= document.getELementById('age').value;
+		 var pass= document.getElementById('passsword').value;
+		 var a= document.getElementById('email').value;
+
+		 if(username==""){
+		 document.getElementById('usename').innerHTML="**Please fill the name field**";
+		 return false;
+		}
+
+		if((username.length<=2)||(username.length>20)){
+			document.getElementById('usename').innerHTML="**The input name should be between 2 and 20**";
+			return false;
+		}
+
+		if(userage==""){
+			document.getElementById('useage').innerHTML="**Please fill the age field**";
+			return false;
+		}
+		if(isNaN(userage)){
+			document.getElementById('useage').innerHTML="**age should only be in number**";
+			return false;
+		}
+
+		if(pass==""){
+			document.getElementById('passw').innerHTML="**Please fill the password field**";
+			return false;
+		}
+
+		if(pass<=2)||(pass>20){
+			document.getElementById('passw').innerHTML="**Password lenght should be between 2 and 20**";
+			return false;
+		}
+
+		if(a=""){
+			document.getElementById('em').innerHTML="**Please fill the email field**";
+			return false;
+
+		}
+
+		if(a.indexof('@')<=0){
+			document.getElementById('em').innerHTML="**Invalid Email address**";
+			return false;
+
+		}
+ 		 
+ 		if(a.charAt(a.lenght-4)!=0){
+ 			document.getElementById('em').innerHTML="**Invalid";
+ 		}
+	}
+</script>
+
+<form name="Myform" onsubmit="return myfun()">
+		<fieldset>
+			<legend>Login</legend>
+
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" Id="name" value="">
+			<span id="usename"></span>
+			<br>
+		</div>
+
+			<div>
+			<label for="Age">Age:</label>
+			<input type="numbers" Id="age" value="" >
+			<span id="useage"></span><br>
+			</div>
+
+			<div>	
+			<label for="Password">Password:</label>
+			<input type="password" Id="password" value="" >
+			<span id="passw"></span>
+		</div>
+
+			<div>
+			<label for="Email">Email:</label>
+			<input type="text" Id="email" value="" >
+			<span id="em"></span>
+			</div>
+
+		<br>
+
+		<input  type="submit" value="submit"></input>
+		</fieldset>
+	</form>
+</body>
+</html>

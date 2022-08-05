@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+<body>
+    <script>
+        function myFun(){
+            let first =Number(document.querySelector("#num1").value);
+            let second= Number(document.querySelector("#num2").value);
+            let third = Number (document.querySelector("#num3").value);
+
+            let x = first + second + third;
+            document.getElementById("demo").value = x;
+        }
+    </script>
+        a: <input type="text" id="num1"><br>
+        <br>
+        b: <input type="text" id="num2"><br>
+        <br>
+        c: <input type="text" id="num3"><br>
+        <br>
+        x: <input type="text" id="demo" readonly="readonly"><br>
+        <br>
+        <button onclick="myFun()">OK</button>
+</body>
+</html>

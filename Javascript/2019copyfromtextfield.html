@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy text from one field to another</title>
+</head>
+<body>
+    <script>
+        function Billfun(f){
+            if(f.billingtoo.checked == true){
+                f.mailingname.value = f.billingname.value;
+                f.mailingaddress.value = f.billingaddress.value;
+            }
+        }
+    </script>
+
+    <form>
+        <h1>Billing info</h1>
+        Billing Name: <input type="text" name="billingname"><br>
+        <br>
+
+        Billing Address: <input type="text" name="billingaddress"><br>
+        <br>
+        <input type="checkbox" name="billingtoo" onclick="Billfun(this.form)">
+        <br>
+
+        <h2>Mailing info</h2>
+        Mailing name: <input type="text" name="mailingname"><br>
+        <br>
+        Mailing Address: <input type="text" name="mailingaddress">
+    </form>
+</body>
+</html>

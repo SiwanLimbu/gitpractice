@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change text from lowercase to uppercase</title>
+</head>
+<body>
+    <script>
+        function myFun(){
+            var name = document.myForm.username.value;
+            var namen = name.toUpperCase();
+            document.getElementById('demo').innerHTML = namen;
+
+            var city = document.myForm.usercity.value;
+            var cityn = city.toUpperCase();
+            document.getElementById('dem').innerHTML = cityn;
+        }
+    </script>
+
+    <form name="myForm" onsubmit="myFun()">
+        username: <input type="text" name="username"><br>
+        <br>
+
+        city: <input type="text" name="usercity"><br>
+        <br>
+
+        <input type="submit" value="submit">
+    </form>
+
+    username: <p id="demo">Click below to convert:</p>
+    <button onclick="myFun()">Click</button><br>
+    <br>
+    City: <p id="dem">Click below to convert:</p>
+    <button onclick="myFun()">Click</button>
+</body>
+</html>

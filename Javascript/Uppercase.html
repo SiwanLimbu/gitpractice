@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFun(){
+            var user= document.myForm.username.value;
+            var usern = user.toUpperCase();
+            document.getElementById("demo").innerHTML= usern;
+          
+
+            var city = document.myForm.city.value;
+            var cityn= city.toUpperCase();
+            document.getElementById("dem").innerHTML= cityn;
+
+
+            if(user == ""){
+                    document.getElementById("usename").innerHTML = "**Please enter usernamee";
+                    return false;
+            }
+
+            if(city == ""){
+                document.getElementById("usecity").innerHTML = "**Please enter city name";
+                return false;
+            }
+        }
+
+    </script>
+    <form name="myForm" onsubmit="return myFun()">
+        <div>
+    Username: <input type="text" name="username">
+    <span id="usename"></span>
+    <br><br>
+
+    City: <input type="text" name="city">
+            <span id="usecity"></span><br>
+   </div>
+
+<br> 
+    <input type="submit" value="submit"><br>
+</form>
+<br>
+Username: <p id="demo"></p>
+<button onclick="myFun()">click to convert</button><br>
+
+City: <p id="dem"></p>
+<button onclick="myFun()">click to convert</button><br>
+
+
+</body>
+</html>

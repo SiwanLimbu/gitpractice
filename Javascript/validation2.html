@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+         let user = window.prompt("Enter username:");
+         if(user==""){
+             alert("pls enter username!");
+         }
+            let pass = window.prompt("Enter password:");
+
+         if(pass == ""){
+             alert("pls enter password!");
+         }
+
+         if(user=="" && pass==""){
+             alert("pls enter username and password");
+         }
+
+       if(user == "admin" && pass== "admin123"){
+            alert("you are logged in");
+        }
+        else if(user!= "admin" && pass!= "admin123"){
+            alert("sorry try again");
+        }
+            
+    </script>
+    </body>
+</html>

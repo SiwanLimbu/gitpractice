@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>Login Page</title>
+		<style>
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 100px;
+      }
+    </style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function myFun(){
+				var user= document.getElementById('name').value;
+				var Age= document.getElementById('age').value;
+				var a= document.getElementById('Email').value;
+				var pass=document.getElementById('password').value
+
+				if (user==""){
+					document.getElementById('username').innerHTML="**Please fill the username";
+					return false;
+				}
+				if((user.length<= 2) || (user.length > 20)){
+
+					 document.getElementById('username').innerHTML="**User length must be between 2 and 20";
+					return false;
+
+				}
+				if (Age==""){
+					document.getElementById('useage').innerHTML="**Please fill the age";
+					return false;
+				}
+				if(isNaN(Age)){
+					document.getElementById('useage').innerHTML="**Only numbers are allowed";
+					return false;
+
+				}
+
+
+				if (a==""){
+					document.getElementById('Message').innerHTML="**Please fill the email id";
+					return false;
+				}
+				if (a.indexOf('@')<=0){
+					document.getElementById('Message').innerHTML="**Invalid Email for @ postiion";
+					return false;
+
+				}
+				if(a.charAt(a.length-4)!='.'){
+					document.getElementById('Message').innerHTML="**Invalid position for . position";
+					return false;
+				}
+				if (pass==""){
+					document.getElementById('pass').innerHTML="**Please fill the password";
+					return false;
+				}
+				if((pass.length<= 2) || (pass.length > 20)){
+
+					 document.getElementById('pass').innerHTML="**password length must be between 2 and 20";
+					return false;
+
+				}
+			}
+
+
+
+		</script>
+		<form name="myForm" onsubmit="return myFun()">
+			<div>
+				<label for="name">Name</label>
+		        <input type="text" id="name" value="">
+		        <span id="username"></span>
+			</div>
+
+			<div>
+
+			<label for="age">Age</label>
+		        <input type="numbers" id="age" value="">
+		         <span id="useage"></span>
+			</div>
+
+			<div>
+				<label for="Email">Email</label>
+		        <input type="text" id="Email" value="">
+		        <span id="Message"></span>
+			</div>
+
+			<div>
+				<label for="password">Password</label>
+		        <input type="password" id="password" value="">
+		         <span id="pass"></span>
+			</div>
+			<input type="submit" value="submit"></input>
+			
+		</form>
+		</body>
+        </html> 

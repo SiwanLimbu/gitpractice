@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Click below to display the oldest person:</h3>
+    <div>
+        <button onclick="displayold()">Display</button>
+    </div>
+    The oldest person is: <input type="text" id="old">
+
+    <script>
+        function displayold(){
+        var name = new Array();
+        var age = new Array();
+        var namedata;
+        var agedata;
+        var oldest;
+        var olddata;
+
+        for (var i= 1; i<=10; i++){
+            namedata = prompt("Enter the name of the "+i+" person:");
+            agedata = prompt("Enter the age of the "+i+" person");
+            name[i] = namedata;
+            age[i] = agedata;
+        }
+
+        for(i = 1; i<=10; i++){
+            if(age[i]> oldest){
+                oldest = age[i];
+                olddata = i;
+            }
+        }
+        document.getElementById("old").innerHTML = name[olddata];
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Largest among two numbers</title>
+</head>
+<body>
+	<div>
+		<label>Enter FIrst Number:</label>
+		<input type="text" id="num">
+
+		<label>Enter Second Number:</label>
+		<input type="text" id="second">
+	</div>
+	<button onclick="myfun()" name="submit"> SUBMIT</button>
+<script type="text/javascript">
+	function myfun(){
+		var First= document.getElementById('num').value;
+		var Second= document.getElementById('second').value;
+		if(First > Second){
+			document.write("Largest number is "+First+" ");
+		} else{
+			document.write("Largest number is "+Second+" ");
+		}
+	}
+</script>
+</body>
+</html>

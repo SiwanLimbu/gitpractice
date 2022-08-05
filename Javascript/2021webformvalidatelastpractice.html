@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webform validation</title>
+</head>
+<body>
+    <script>
+        function valid(){
+            var fname = document.myForm.first.value;
+            var lname = document.myForm.last.value;
+            var age = document.myForm.userage.value;
+
+            if(fname == ""){
+                document.getElementById("usefirst").innerHTML = "**Please enter first name**";
+                return false;
+            }
+
+            if(lname == ""){
+                document.getElementById("uselast").innerHTML = "**Please enter last name**";
+                return false;
+            }
+
+            if(age == ""){
+                document.getElementById("useage").innerHTML = "**Please enter age**";
+                return false;
+            }
+
+            if(isNaN(age)){
+                document.getElementById("useage").innerHTML = "**Invalid age";
+                return false;
+            }
+        }
+    </script>
+    <form name="myForm" onsubmit="return valid()">
+        First Name: <input type="text" name="first" value="">
+        <span id="usefirst"></span><br>
+
+        <br>
+        Last Name: <input type="text" name="last" value="">
+        <span id="uselast"></span><br>
+
+        <br>
+        Age: <input type="number" name="userage" value="">
+        <span id="useage"></span><br>
+
+        <br>
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
